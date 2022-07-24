@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/org/mrvladus/converter">
+		<file>data/ui/window.ui</file>
+		<file>data/styles/styles.css</file>
+	</gresource>
+</gresources>

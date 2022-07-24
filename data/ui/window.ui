@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="converter">
+	<object id="window" class="AdwApplicationWindow">
+		<property name="title" translatable="yes">Converter</property>
+		<property name="resizable">false</property>
+		<child>
+			<object class="GtkBox">
+				<property name="orientation">vertical</property>
+				<property name="spacing">10</property>
+				<property name="margin-bottom">20</property>
+				<child>
+					<object id="headerbar" class="AdwHeaderBar">
+						<style>
+							<class name="flat" />
+						</style>
+						<child>
+							<object id="spinner" class="GtkSpinner">
+								<property name="visible">false</property>
+							</object>
+						</child>
+						<child type="end">
+							<object id="settings" class="GtkButton">
+								<property name="icon-name">open-menu-symbolic</property>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="AdwPreferencesGroup">
+						<property name="title" translatable="yes">Input file</property>
+						<property name="margin-start">20</property>
+						<property name="margin-end">20</property>
+						<child>
+							<object id="select_row" class="AdwActionRow">
+								<property name="subtitle" translatable="yes">Click here to select video file</property>
+								<property name="activatable-widget">select_btn</property>
+								<child>
+									<object id="select_btn" class="GtkButton">
+										<property name="valign">center</property>
+										<property name="icon-name">document-open-symbolic</property>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="AdwPreferencesGroup">
+						<property name="title" translatable="yes">Settings</property>
+						<property name="margin-start">20</property>
+						<property name="margin-end">20</property>
+						<child>
+							<object id="formats_row" class="AdwComboRow">
+								<property name="title" translatable="yes">Format</property>
+								<property name="model">
+									<object id="formats_list" class="GtkStringList">
+										<items>
+											<item>.avi</item>
+											<item>.mkv</item>
+											<item>.mp4</item>
+										</items>
+									</object>
+								</property>
+							</object>
+
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox">
+						<property name="orientation">horizontal</property>
+						<property name="spacing">10</property>
+						<property name="halign">center</property>
+						<property name="margin-top">10</property>
+						<child>
+							<object id="convert_btn" class="GtkButton">
+								<property name="label" translatable="yes">Convert</property>
+								<property name="sensitive">false</property>
+								<style>
+									<class name="suggested-action" />
+								</style>
+							</object>
+						</child>
+						<child>
+							<object id="cancel_btn" class="GtkButton">
+								<property name="label" translatable="yes">Cancel</property>
+								<property name="visible">false</property>
+								<style>
+									<class name="destructive-action" />
+								</style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object id="terminal_window" class="GtkScrolledWindow">
+						<property name="margin-start">20</property>
+						<property name="margin-end">20</property>
+						<property name="propagate-natural-width">true</property>
+						<!-- <property name="max-content-width">500</property> -->
+						<property name="min-content-height">100</property>
+						<property name="visible">false</property>
+						<child>
+							<object id="terminal" class="VteTerminal">
+								<property name="scroll-on-output">true</property>
+								<property name="input-enabled">false</property>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+	</object>
+	<object id="select_dialog" class="GtkFileChooserDialog">
+		<property name="transient-for">window</property>
+		<property name="title" translatable="yes">Select file to convert</property>
+		<child type="action">
+			<object class="GtkButton" id="button_cancel">
+				<property name="label" translatable="yes">Cancel</property>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="button_ok">
+				<property name="label" translatable="yes">Select</property>
+			</object>
+		</child>
+		<action-widgets>
+			<action-widget response="cancel">button_cancel</action-widget>
+			<action-widget response="ok" default="true">button_ok</action-widget>
+		</action-widgets>
+	</object>
+</interface>
