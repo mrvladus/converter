@@ -5,7 +5,7 @@
 
 GtkBuilder *builder;
 GObject *window;
-GObject *headerbar, *spinner;
+GObject *headerbar, *spinner, *info_btn, *about_dialog;
 GObject *select_btn, *select_dialog, *select_row;
 GString *name, *path;
 GObject *formats_row, *formats_list;
@@ -74,18 +74,25 @@ void on_select_dialog_response(GtkDialog *dialog, int response) {
 	}
 }
 
+void on_info_btn_clicked() {
+	gtk_widget_show(GTK_WIDGET(about_dialog));
+}
+
 void connect_signals() {
+	g_signal_connect(info_btn, "clicked", G_CALLBACK(on_info_btn_clicked), NULL);
 	g_signal_connect(select_btn, "clicked", G_CALLBACK(on_select_btn_clicked), NULL);
 	g_signal_connect(select_dialog, "response", G_CALLBACK(on_select_dialog_response), NULL);
 	g_signal_connect(convert_btn, "clicked", G_CALLBACK(on_convert_btn_clicked), NULL);
 	g_signal_connect(cancel_btn, "clicked", G_CALLBACK(on_cancel_btn_clicked), NULL);
-	g_signal_connect(terminal, "child-exited", on_convertation_end, NULL);
+	g_signal_connect(terminal, "child-exited", G_CALLBACK(on_convertation_end), NULL);
 }
 
 void get_objects() {
 	window = gtk_builder_get_object(builder, "window");
 	headerbar = gtk_builder_get_object(builder, "headerbar");
 	spinner = gtk_builder_get_object(builder, "spinner");
+	info_btn = gtk_builder_get_object(builder, "info_btn");
+	about_dialog = gtk_builder_get_object(builder, "about_dialog");
 	select_row = gtk_builder_get_object(builder, "select_row");
 	select_btn = gtk_builder_get_object(builder, "select_btn");
 	select_dialog = gtk_builder_get_object(builder, "select_dialog");
@@ -113,7 +120,7 @@ void activate(GtkApplication *app) {
 
 int main(int argc, char **argv) {
 	// Load locales
-	bindtextdomain("converter", "./locales");
+	bindtextdomain("converter", "./build/locales");
 	textdomain("converter");
 	// Create and run application
 	AdwApplication *app = adw_application_new("org.mrvladus.converter", G_APPLICATION_FLAGS_NONE);
