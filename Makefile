@@ -1,7 +1,7 @@
 NAME=converter
-LIBS=gtk4 libadwaita-1 vte-2.91-gtk4
 BUILDDIR=./build
 LOCALESDIR=$(BUILDDIR)/locales
+LIBS=gtk4 libadwaita-1 vte-2.91-gtk4
 
 all: compile
 

@@ -36,16 +36,25 @@ void on_convertation_start(VteTerminal *term, GPid gpid, GError *error, gpointer
 }
 
 void on_convert_btn_clicked() {
+	// Get selected format
 	const char *format = gtk_string_list_get_string(GTK_STRING_LIST(formats_list), adw_combo_row_get_selected(ADW_COMBO_ROW(formats_row)));
+	// Create output file path
 	GString *out = g_string_new(path->str);
-	g_string_append(out, format); // Add format to output filename
-	// Construct command
-	char *cmd[] = {"ffmpeg", "-i", path->str, "-c:v", "libxvid", "-c:a", "ac3", "-qscale", "3", "-y", out->str, NULL};
+	// Add format to output filename
+	g_string_append(out, format);
+	// Construct command and run in vte-terminal
 	if (strcmp(format, ".avi") == 0) {
-		g_print("avi\n");
+		char *cmd[] = {"ffmpeg", "-i", path->str, "-c:v", "libxvid", "-c:a", "ac3", "-qscale", "3", "-y", out->str, NULL};
+		vte_terminal_spawn_async(VTE_TERMINAL(terminal), VTE_PTY_DEFAULT, NULL, cmd, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, -1, NULL, on_convertation_start, NULL);
 	}
-	// Run command in terminal
-	vte_terminal_spawn_async(VTE_TERMINAL(terminal), VTE_PTY_DEFAULT, NULL, cmd, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, -1, NULL, on_convertation_start, NULL);
+	else if (strcmp(format, ".mkv") == 0) {
+		char *cmd[] = {"ffmpeg", "-i", path->str, "-c", "copy", "-y", out->str, NULL};
+		vte_terminal_spawn_async(VTE_TERMINAL(terminal), VTE_PTY_DEFAULT, NULL, cmd, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, -1, NULL, on_convertation_start, NULL);
+	}
+	else if (strcmp(format, ".webm") == 0) {
+		char *cmd[] = {"ffmpeg", "-i", path->str, "-c:v", "libvpx", "-c:a", "libvorbis", "-crf", "10", "-b:v", "1M", "-y", out->str, NULL};
+		vte_terminal_spawn_async(VTE_TERMINAL(terminal), VTE_PTY_DEFAULT, NULL, cmd, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, -1, NULL, on_convertation_start, NULL);
+	}
 }
 
 void on_select_btn_clicked() {

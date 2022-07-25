@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-24 20:27+0300\n"
+"POT-Creation-Date: 2022-07-25 11:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,18 +37,18 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: data/ui/window.ui:77
+#: data/ui/window.ui:75
 msgid "Convert"
 msgstr ""
 
-#: data/ui/window.ui:86 data/ui/window.ui:119
+#: data/ui/window.ui:84 data/ui/window.ui:117
 msgid "Cancel"
 msgstr ""
 
-#: data/ui/window.ui:116
+#: data/ui/window.ui:114
 msgid "Select file to convert"
 msgstr ""
 
-#: data/ui/window.ui:124
+#: data/ui/window.ui:122
 msgid "Select"
 msgstr ""
