@@ -107,10 +107,10 @@ void get_objects() {
 void activate(GtkApplication *app) {
 	// Add custom styles
 	GtkCssProvider *css_provider = gtk_css_provider_new();
-	gtk_css_provider_load_from_resource(css_provider, "/org/mrvladus/converter/data/styles/styles.css");
+	gtk_css_provider_load_from_resource(css_provider, "/org/mrvladus/converter/styles.css");
 	gtk_style_context_add_provider_for_display(gdk_display_get_default(), GTK_STYLE_PROVIDER(css_provider), 600);
 	// Create builder, get objects and connect signals
-	builder = gtk_builder_new_from_resource("/org/mrvladus/converter/data/ui/window.ui");
+	builder = gtk_builder_new_from_resource("/org/mrvladus/converter/window.ui");
 	get_objects();
 	connect_signals();
 	// Show window
