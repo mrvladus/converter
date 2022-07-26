@@ -3,6 +3,8 @@
 #include <adwaita.h>
 #include <vte/vte.h>
 
+#include "config.h"
+
 GtkBuilder *builder;
 GObject *window;
 GObject *headerbar, *spinner, *info_btn, *about_dialog;
@@ -120,8 +122,8 @@ void activate(GtkApplication *app) {
 
 int main(int argc, char **argv) {
 	// Load locales
-	bindtextdomain("converter", "./build/locales");
-	textdomain("converter");
+	bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
+	textdomain(GETTEXT_PACKAGE);
 	// Create and run application
 	AdwApplication *app = adw_application_new("org.mrvladus.converter", G_APPLICATION_FLAGS_NONE);
 	g_signal_connect(app, "activate", G_CALLBACK(activate), GTK_APPLICATION(app));

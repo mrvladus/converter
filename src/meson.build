@@ -1,8 +1,9 @@
 converter_sources = [
 	'main.c',
 ]
+
 converter_deps = [
-	dependency('libadwaita-1', version >= '1.1'),
+	dependency('libadwaita-1', version: '>= 1.1'),
 	dependency('vte-2.91-gtk4', version: '>= 0.69.0'),
 ]
 

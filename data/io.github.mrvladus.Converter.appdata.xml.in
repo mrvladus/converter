@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>com.github.mrvladus.Converter.desktop</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>MIT</project_license>
+	<name>Converter</name>
+	<summary>Convert video files to popular formats.</summary>
+	<description>
+		<p>Currently supported formats:</p>
+		<ul>
+			<li>avi: Supported by any home DVD player.</li>
+			<li>webm: Popular video format for the web.</li>
+			<li>mkv: Powerful Matroska video container supported by most players.</li>
+		</ul>
+	</description>
+</component>

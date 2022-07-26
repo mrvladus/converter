@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Converter
+Exec=converter
+Icon=io.github.mrvladus.Converter
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

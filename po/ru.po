@@ -1,46 +1,75 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Russian translations for converter package.
+# Copyright (C) 2022 THE converter'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the converter package.
+# Automatically generated, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: converter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-23 12:10+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: mrvladus <mrvladus@yandex.ru>\n"
-"Language-Team: Russian\n"
+"POT-Creation-Date: 2022-07-26 14:56+0300\n"
+"PO-Revision-Date: 2022-07-26 14:56+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/ui/window.ui:4
+#: src/resources/window.ui:4 src/resources/window.ui:136
+#: data/io.github.mrvladus.Converter.appdata.xml.in:6
+#: data/io.github.mrvladus.Converter.desktop.in:3
 msgid "Converter"
 msgstr "Конвертер"
 
-#: data/ui/window.ui:27
+#: src/resources/window.ui:30
 msgid "Input file"
 msgstr "Входной файл"
 
-#: data/ui/window.ui:32
+#: src/resources/window.ui:35
 msgid "Click here to select video file"
-msgstr "Кликните чтобы выбрать видео файл"
+msgstr "Нажмите, чтобы выбрать видео файл"
 
-#: data/ui/window.ui:40
+#: src/resources/window.ui:49
 msgid "Settings"
-msgstr "Настройки"
+msgstr ""
 
-#: data/ui/window.ui:45
+#: src/resources/window.ui:54
 msgid "Format"
-msgstr "Формат"
+msgstr ""
 
-#: data/ui/window.ui:58
+#: src/resources/window.ui:77
 msgid "Convert"
-msgstr "Конвертировать"
+msgstr ""
 
-#: data/ui/window.ui:66
+#: src/resources/window.ui:86 src/resources/window.ui:120
 msgid "Cancel"
-msgstr "Отмена"
+msgstr ""
+
+#: src/resources/window.ui:117
+msgid "Select file to convert"
+msgstr ""
+
+#: src/resources/window.ui:125
+msgid "Select"
+msgstr ""
+
+#: data/io.github.mrvladus.Converter.appdata.xml.in:7
+msgid "Convert video files to popular formats."
+msgstr ""
+
+#: data/io.github.mrvladus.Converter.appdata.xml.in:9
+msgid "Currently supported formats:"
+msgstr ""
+
+#: data/io.github.mrvladus.Converter.appdata.xml.in:11
+msgid "avi: Supported by any home DVD player."
+msgstr ""
+
+#: data/io.github.mrvladus.Converter.appdata.xml.in:12
+msgid "webm: Popular video format for the web."
+msgstr ""
+
+#: data/io.github.mrvladus.Converter.appdata.xml.in:13
+msgid "mkv: Powerful Matroska video container supported by most players."
+msgstr ""
