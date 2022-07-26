@@ -22,14 +22,14 @@ void on_cancel_btn_clicked() {
 } 
 
 void on_convertation_end() {
-	g_object_set(terminal_window, "visible", false, NULL);
+	//g_object_set(terminal_window, "visible", false, NULL);
 	g_object_set(convert_btn, "visible", true, NULL);
 	g_object_set(cancel_btn, "visible", false, NULL);
 	g_object_set(spinner, "visible", false, NULL);
 }
 
 void on_convertation_start(VteTerminal *term, GPid gpid, GError *error, gpointer user_data) {
-	g_object_set(terminal_window, "visible", true, NULL);
+	//g_object_set(terminal_window, "visible", true, NULL);
 	g_object_set(convert_btn, "visible", false, NULL);
 	g_object_set(cancel_btn, "visible", true, NULL);
 	g_object_set(spinner, "visible", true, NULL);
