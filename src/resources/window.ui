@@ -56,7 +56,6 @@
 									<object id="formats_list" class="GtkStringList">
 										<items>
 											<item>.avi</item>
-											<item>.mkv</item>
 											<item>.webm</item>
 										</items>
 									</object>
@@ -97,9 +96,8 @@
 						<property name="margin-start">20</property>
 						<property name="margin-end">20</property>
 						<property name="propagate-natural-width">true</property>
-						<!-- <property name="max-content-width">500</property> -->
 						<property name="min-content-height">100</property>
-						<property name="visible">true</property>
+						<property name="visible">false</property>
 						<child>
 							<object id="terminal" class="VteTerminal">
 								<property name="scroll-on-output">true</property>
